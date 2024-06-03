@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Travelingapp</string>
+    <string name="forgotpassword">forgotpassword</string>
+    <string name="signup">signup</string>
+</resources>
