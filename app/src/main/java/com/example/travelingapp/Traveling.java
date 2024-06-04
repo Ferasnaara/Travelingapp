@@ -1,15 +1,15 @@
 package com.example.travelingapp;
 
-public class Traviling {
+public class Traveling {
     private String Name;
     private String description;
     private String address;
     private String phone;
 
-    public Traviling() {
+    public Traveling() {
     }
 
-    public Traviling(String Name, String description, String address, String phone) {
+    public Traveling(String Name, String description, String address, String phone) {
         this.Name = Name;
         this.description = description;
         this.address = address;
@@ -28,7 +28,7 @@ public class Traviling {
         return description;
     }
 
-    public void setDescription(Traviling description) {
+    public void setDescription(Traveling description) {
         this.description = String.valueOf(description);
     }
 

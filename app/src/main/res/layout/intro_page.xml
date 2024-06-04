@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Fragments.introFragment$DetailsActivity">
 
     <FrameLayout
         android:id="@+id/frameLayoutMain"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="552dp"
                 android:scaleType="center"
-                tools:srcCompat="@drawable/travel_guard_1_thumb_800_480_png" />
+                tools:srcCompat="@drawable/traveling123" />
 
 
             <TextView

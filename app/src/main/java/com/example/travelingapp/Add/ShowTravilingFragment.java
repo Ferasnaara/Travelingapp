@@ -17,7 +17,7 @@ import com.example.travelingapp.Adapter.MyAdapter;
 import com.example.travelingapp.Fragments.FirebaseServices;
 import com.example.travelingapp.Fragments.FirebaseServices;
 import com.example.travelingapp.R;
-import com.example.travelingapp.Traviling;
+import com.example.travelingapp.Traveling;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class ShowTravilingFragment extends Fragment {
 
     private FirebaseServices fbs;
-    private ArrayList<Traviling> t;
+    private ArrayList<Traveling> t;
     private RecyclerView tr;
     private MyAdapter adapter;
     private static final String ARG_PARAM1 = "param1";
@@ -81,9 +81,9 @@ public class ShowTravilingFragment extends Fragment {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 for (DocumentSnapshot dataSnapshot: queryDocumentSnapshots.getDocuments()){
-                    Traviling travil = dataSnapshot.toObject(Traviling.class);
+                    Traveling travel = dataSnapshot.toObject(Traveling.class);
 
-                    travil.setDescription(travil);
+                    travel.setDescription(travel);
                 }
                 adapter.notifyDataSetChanged();
             }

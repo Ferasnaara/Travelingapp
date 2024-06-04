@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.traveling.R;
-import com.example.traviling.LoginSignUpForgetPassword.LoginFragment;
+import com.example.travelingapp.R;
+import com.example.travelingapp.Fragments.LoginFragment;
 
 public class introFragment extends Fragment {
     public class DetailsActivity extends AppCompatActivity {

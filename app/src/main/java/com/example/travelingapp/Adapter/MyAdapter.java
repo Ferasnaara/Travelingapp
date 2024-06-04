@@ -12,16 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travelingapp.R;
-import com.example.travelingapp.Traviling;
+import com.example.travelingapp.Traveling;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
 {
-    ArrayList<Traviling>list;
+    ArrayList<Traveling>list;
     Context context ;
 
-    public MyAdapter(Context context, ArrayList<Traviling> list) {
+    public MyAdapter(Context context, ArrayList<Traveling> list) {
         this.context = context;
         list = list;
     }
@@ -30,7 +30,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
         this.context = context;
     }
 
-    public void setList(ArrayList<Traviling> list) {
+    public void setList(ArrayList<Traveling> list) {
         this.list = list;
     }
 
@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position)
     {
-        Traviling product=list.get(position);
+        Traveling product=list.get(position);
         holder.Name.setText(product.getName());
         holder.Price.setText(product.getPhone());
     }

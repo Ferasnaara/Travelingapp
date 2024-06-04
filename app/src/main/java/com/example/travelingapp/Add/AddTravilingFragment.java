@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.travelingapp.R;
 import com.example.travelingapp.Fragments.FirebaseServices;
-import com.example.travelingapp.Traviling;
+import com.example.travelingapp.Traveling;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -89,7 +89,7 @@ import com.google.firebase.firestore.DocumentReference;
                     return;
                 }
 
-                Traviling traviling= new Traviling(name, description, address, phone);
+                Traveling traveling= new Traveling(name, description, address, phone);
 
                 fbs.getFire().collection("restaurants").add(fbs).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override

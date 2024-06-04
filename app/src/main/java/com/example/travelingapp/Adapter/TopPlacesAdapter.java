@@ -1,4 +1,4 @@
-package com.example.traviling.Adapter;
+package com.example.travelingapp.Adapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.traviling.R;
+import com.example.travelingapp.R;
 
 import java.util.List;
 
 public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopPlacesViewHolder> {
 
     Context context;
-    List<TopPlacesData> topPlacesDataList;
+    List<com.example.travelingapp.Adapter.TopPlacesData> topPlacesDataList;
 
-    public TopPlacesAdapter(Context context, List<TopPlacesData> topPlacesDataList) {
+    public TopPlacesAdapter(Context context, List<com.example.travelingapp.Adapter.TopPlacesData> topPlacesDataList) {
         this.context = context;
         this.topPlacesDataList = topPlacesDataList;
     }

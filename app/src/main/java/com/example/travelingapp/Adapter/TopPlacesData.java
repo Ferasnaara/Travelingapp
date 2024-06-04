@@ -1,4 +1,4 @@
-package com.example.traviling.Adapter;
+package com.example.travelingapp.Adapter;
 public class TopPlacesData {
 
     String placeName;
