@@ -1,4 +1,6 @@
 package com.example.travelingapp.Fragments;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.travelingapp.Homepage;
 import com.example.travelingapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -113,7 +116,7 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // TODO: where should I go
+                            gotoIntroFragment();
                         } else {
                             Toast.makeText(getActivity(), "failed to login! check user or password", Toast.LENGTH_SHORT).show();
                         }
@@ -125,10 +128,17 @@ public class LoginFragment extends Fragment {
 
     }
 
+    private void gotoIntroFragment() {
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frameLayoutMain, new introFragment());
+        ft.commit();
+    }
+
 
     private void gotoSignupFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayoutMain, new SignUpFragment());
+        ft.addToBackStack(null);
         ft.commit();
 
     }
@@ -136,10 +146,8 @@ public class LoginFragment extends Fragment {
     private void gotoForgotPasswordFragment() {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayoutMain, new ForgotPasswordFragment());
+        ft.addToBackStack(null);
         ft.commit();
 
-    }
-
-    public void gotoSignUpFragment(View view) {
     }
 }

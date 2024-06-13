@@ -28,7 +28,7 @@ public class ForgotPasswordFragment extends Fragment
 
     private void Reset() {
 
-        etEmailforgot = getView().findViewById(R.id.etEmailSignup);
+        etEmailforgot = getView().findViewById(R.id.etEmailForgot);
         btnForgot = getView().findViewById(R.id.btnSendForgot);
         mAuth = FirebaseAuth.getInstance();
         btnForgot.setOnClickListener(new View.OnClickListener() {

@@ -1,11 +1,15 @@
 package com.example.travelingapp.Activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.travelingapp.Fragments.FirebaseServices;
+import com.example.travelingapp.Homepage;
 import com.example.travelingapp.R;
 import com.example.travelingapp.Fragments.ForgotPasswordFragment;
 import com.example.travelingapp.Fragments.LoginFragment;
@@ -19,8 +23,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseServices fbs = FirebaseServices.getInstance();
 
-        gotoLoginFragment();
+        if (fbs.getAuth().getCurrentUser() != null) {
+            Intent i = new Intent(this, Homepage.class);
+            startActivity(i);
+            ((Activity) this).overridePendingTransition(0, 0);
+        }
+        else {
+            gotoLoginFragment();
+        }
     }
 
     public void gotoSignUpFragment(View view) {
@@ -40,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frameLayoutMain, new ForgotPasswordFragment());
         ft.commit();
-    }
-
-    public void gotoLoginFragment(View view) {
     }
 }
 

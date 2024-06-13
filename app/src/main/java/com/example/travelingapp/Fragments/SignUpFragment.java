@@ -10,15 +10,16 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.travelingapp.Fragments.FirebaseServices;
+import com.example.travelingapp.Homepage;
 import com.example.travelingapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 
-public class SignUpFragment extends Fragment
-{
+public class SignUpFragment extends Fragment {
     private Button btnSignUpSIGNUP;
     private EditText etUsernameSIGNUP,etPasswordSIGNUP;
     private com.example.travelingapp.Fragments.FirebaseServices fbs;
@@ -57,17 +58,22 @@ public class SignUpFragment extends Fragment
     @Override
     public void onStart() {
         super.onStart();
-        etUsernameSIGNUP = getView().findViewById(R.id.btnSignupLogin);
+        connect();
+    }
+
+    private void connect() {
+        etUsernameSIGNUP = getView().findViewById(R.id.etEmailSignup);
+        etPasswordSIGNUP = getView().findViewById(R.id.etPasswordSignup);
+        btnSignUpSIGNUP = getView().findViewById(R.id.btnSignupSignup);
         fbs= FirebaseServices.getInstance();
-        etPasswordSIGNUP = getView().findViewById(R.id.btnSignupLogin);
-        btnSignUpSIGNUP = getView().findViewById(R.id.btnStartMain);
         btnSignUpSIGNUP.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
                 String eMail = etUsernameSIGNUP.getText().toString();
                 String password = etPasswordSIGNUP.getText().toString();
-                if (eMail.trim().isEmpty() && password.trim().isEmpty()) {
+                if (eMail.trim().isEmpty() ||
+                        password.trim().isEmpty()) {
                     Toast.makeText(getActivity(), "some fields are empty!!!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -76,9 +82,9 @@ public class SignUpFragment extends Fragment
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task)
                     {
-                        Intent i = new Intent(getActivity(), AllProductsActivity.class);
-                        startActivity(i);
-                        ((Activity) getActivity()).overridePendingTransition(0, 0);
+                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.frameLayoutMain, new introFragment());
+                        ft.commit();
 
 
                     }
@@ -87,7 +93,4 @@ public class SignUpFragment extends Fragment
         });
     }
 
-
-    private class AllProductsActivity {
-    }
 }

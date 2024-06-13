@@ -7,7 +7,7 @@
     tools:context=".Fragments.introFragment$DetailsActivity">
 
     <FrameLayout
-        android:id="@+id/frameLayoutMain"
+        android:id="@+id/frameLayoutIntro"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteY="731dp">
@@ -63,8 +63,7 @@
                 android:onClick="gotoLoginFragment"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:text="Let's GedistributionUrl=https\://services.gradle.org/distributions/gradle-8.6-bin.zip
-t Started"
+                android:text="Let's Get Started"
                 android:backgroundTint="#FF5722"/>
 
         </LinearLayout>
